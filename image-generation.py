@@ -3,8 +3,9 @@ from google.genai import types
 from PIL import Image
 from io import BytesIO
 import base64
+from decouple import config
 
-client = genai.Client()
+client = genai.Client(api_key=config("GEMINI_API_KEY"))
 
 contents = ('Hi, can you create a 3d rendered image of a pig '
             'with wings and a top hat flying over a happy '
